@@ -9,6 +9,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
 
+
 public class FireCake extends SlimefunItem {
 
     public FireCake(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -17,11 +18,11 @@ public class FireCake extends SlimefunItem {
 
     @Override
     public void preRegister() {
-        BlockUseHandler blockUseHandler = this::onBlockRightClick;
+        BlockUseHandler blockUseHandler = this::onItemRightClick;
         addItemHandler(blockUseHandler);
     }
 
-    private void onBlockRightClick(PlayerRightClickEvent event) {
+    private void onItemRightClick(PlayerRightClickEvent event) {
         event.cancel();
         event.getPlayer().setFireTicks(60);
     }

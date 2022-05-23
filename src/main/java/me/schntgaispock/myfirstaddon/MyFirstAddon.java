@@ -46,7 +46,7 @@ public class MyFirstAddon extends JavaPlugin implements SlimefunAddon {
 
         SlimefunItem waterCake = new WaterCake(
             schnsFirstAddon,
-            new SlimefunItemStack("FIRE_CAKE", Material.CAKE, "&bWater Cake", "", "&fExtinguishes you when you try to eat it!"),
+            new SlimefunItemStack("WATER_CAKE", Material.CAKE, "&bWater Cake", "", "&fExtinguishes you when you try to eat it!"),
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[] {
                 null, null, null,
