@@ -1,4 +1,4 @@
-package me.schntgaispock.myfirstaddon.items;
+package me.schntgaispock.myfirstaddon.slimefun.items;
 
 import org.bukkit.inventory.ItemStack;
 
@@ -8,11 +8,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
+import lombok.NonNull;
 
-public class WaterCake extends SlimefunItem {
+public class FireCake extends SlimefunItem {
 
-    public WaterCake(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        super(itemGroup, item, recipeType, recipe);
+    public FireCake(@NonNull ItemGroup itemGroup, @NonNull SlimefunItemStack itemStack, @NonNull RecipeType recipeType,
+        @NonNull ItemStack[] recipe) {
+        super(itemGroup, itemStack, recipeType, recipe);
     }
 
     @Override
@@ -22,6 +24,6 @@ public class WaterCake extends SlimefunItem {
 
     private void onBlockRightClick(PlayerRightClickEvent event) {
         event.cancel();
-        event.getPlayer().setFireTicks(0);
+        event.getPlayer().setFireTicks(60);
     }
 }

@@ -1,5 +1,8 @@
-package me.schntgaispock.myfirstaddon.items;
+package me.schntgaispock.myfirstaddon.slimefun.items;
 
+import org.bukkit.Sound;
+import org.bukkit.SoundCategory;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
@@ -8,11 +11,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import lombok.NonNull;
 
 public class XpPrinter extends SlimefunItem {
 
-    public XpPrinter(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        super(itemGroup, item, recipeType, recipe);
+    public XpPrinter(@NonNull ItemGroup itemGroup, @NonNull SlimefunItemStack itemStack, @NonNull RecipeType recipeType,
+        @NonNull ItemStack[] recipe) {
+        super(itemGroup, itemStack, recipeType, recipe);
     }
 
     @Override
@@ -20,8 +25,10 @@ public class XpPrinter extends SlimefunItem {
         addItemHandler((ItemUseHandler) this::onItemRightClick);
     }
 
-    private void onItemRightClick(PlayerRightClickEvent event) {
+    private void onItemRightClick(@NonNull PlayerRightClickEvent event) {
         event.cancel();
-        event.getPlayer().giveExpLevels(1);
+        Player player = event.getPlayer();
+        player.giveExpLevels(1);
+        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 }
