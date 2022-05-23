@@ -17,8 +17,7 @@ public class WaterCake extends SlimefunItem {
 
     @Override
     public void preRegister() {
-        BlockUseHandler blockUseHandler = this::onBlockRightClick;
-        addItemHandler(blockUseHandler);
+        addItemHandler((BlockUseHandler) this::onBlockRightClick);
     }
 
     private void onBlockRightClick(PlayerRightClickEvent event) {

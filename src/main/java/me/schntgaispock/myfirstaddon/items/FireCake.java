@@ -18,11 +18,10 @@ public class FireCake extends SlimefunItem {
 
     @Override
     public void preRegister() {
-        BlockUseHandler blockUseHandler = this::onItemRightClick;
-        addItemHandler(blockUseHandler);
+        addItemHandler((BlockUseHandler) this::onBlockRightClick);
     }
 
-    private void onItemRightClick(PlayerRightClickEvent event) {
+    private void onBlockRightClick(PlayerRightClickEvent event) {
         event.cancel();
         event.getPlayer().setFireTicks(60);
     }

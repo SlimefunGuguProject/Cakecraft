@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 
 public class XpPrinter extends SlimefunItem {
 
@@ -17,8 +17,7 @@ public class XpPrinter extends SlimefunItem {
 
     @Override
     public void preRegister() {
-        BlockUseHandler blockUseHandler = this::onItemRightClick;
-        addItemHandler(blockUseHandler);
+        addItemHandler((ItemUseHandler) this::onItemRightClick);
     }
 
     private void onItemRightClick(PlayerRightClickEvent event) {
