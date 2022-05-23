@@ -15,14 +15,14 @@ public class SchnsStacks {
     static {
 
         FIRE_CAKE = new SlimefunItemStack(
-            "XP_PRINTER",
+            "FIRE_CAKE",
             Material.CAKE,
             "&cFire Cake",
             "",
             "&fSets you on fire when you try to eat it!");
 
         WATER_CAKE = new SlimefunItemStack(
-            "XP_PRINTER",
+            "WATER_CAKE",
             Material.CAKE,
             "&bWater Cake",
             "",
