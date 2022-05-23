@@ -1,5 +1,6 @@
 package me.schntgaispock.myfirstaddon.slimefun.items;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
@@ -36,7 +37,7 @@ public class RadioactiveCake extends SlimefunItem implements Radioactive {
     private void onBlockRightClick(@NonNull PlayerRightClickEvent event) {
         event.cancel();
         Player player = event.getPlayer();
-        player.sendMessage("&eYou probably shouldn't eat a Radioactive Cake...");
+        player.sendMessage(ChatColor.YELLOW + "You probably shouldn't eat a Radioactive Cake...");
         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 
@@ -54,7 +55,7 @@ public class RadioactiveCake extends SlimefunItem implements Radioactive {
 
             @Override
             public void tick(Block b, SlimefunItem arg1, Config data) {
-                b.getWorld().spawnParticle(Particle.VILLAGER_ANGRY, b.getLocation(), 5, .2d, .2d, .2d, 2.0d);
+                b.getWorld().spawnParticle(Particle.VILLAGER_ANGRY, b.getX() + 0.5d, b.getY() - 0.5d, b.getZ() + 0.5d, 5, .2d, .2d, .2d, 2.0d);
             }
 
         };

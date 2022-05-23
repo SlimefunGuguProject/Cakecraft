@@ -10,7 +10,7 @@ public class SchnsStacks {
     public static final SlimefunItemStack FIRE_CAKE,
         WATER_CAKE,
         XP_PRINTER,
-        RADIOACTIVE_CAKE;
+        RADIOACTIVE_CAKE, MUSICAL_CAKE;
 
     static {
 
@@ -33,7 +33,9 @@ public class SchnsStacks {
             Material.EXPERIENCE_BOTTLE,
             "&eXP Printer",
             "",
-            "&fInflates the XP economy!");
+            "&fInflates the XP economy!",
+            "",
+            LoreBuilder.RIGHT_CLICK_TO_USE);
 
         RADIOACTIVE_CAKE = new SlimefunItemStack(
             "RADIOACTIVE_CAKE",
@@ -45,5 +47,11 @@ public class SchnsStacks {
             LoreBuilder.radioactive(RadioactiveCake.RADIOACTIVITY),
             LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
+        MUSICAL_CAKE = new SlimefunItemStack(
+            "MUSICAL_CAKE",
+            Material.CAKE,
+            "&aMusical Cake",
+            "",
+            "&fHow does it make that sound?");
     }
 }

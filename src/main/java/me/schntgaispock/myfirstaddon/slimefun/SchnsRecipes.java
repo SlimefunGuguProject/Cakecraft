@@ -24,45 +24,48 @@ public class SchnsRecipes {
         }
     }
 
-    public static final Recipe FIRE_CAKE;
-    public static final Recipe WATER_CAKE;
-    public static final Recipe XP_PRINTER;
-    public static final Recipe RADIOACTIVE_CAKE;
+    public static final Recipe FIRE_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            null, null, null,
+            null, new ItemStack(Material.CANDLE), null,
+            null, new ItemStack(Material.CAKE), null
+        });
 
-    static {
-        FIRE_CAKE = new Recipe(
-            RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {
-                null, null, null,
-                null, new ItemStack(Material.CANDLE), null,
-                null, new ItemStack(Material.CAKE), null
-            });
+    public static final Recipe WATER_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            null, null, null,
+            null, new ItemStack(Material.WATER_BUCKET), null,
+            null, new ItemStack(Material.CAKE), null
+        });
 
-        WATER_CAKE = new Recipe(
-            RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {
-                null, null, null,
-                null, new ItemStack(Material.WATER_BUCKET), null,
-                null, new ItemStack(Material.CAKE), null
-            });
+    public static final Recipe XP_PRINTER = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.EXPERIENCE_BOTTLE),
+            new ItemStack(Material.EXPERIENCE_BOTTLE),
+            new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.PAPER),
+            new ItemStack(Material.EXPERIENCE_BOTTLE),
+            new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.EXPERIENCE_BOTTLE),
+            new ItemStack(Material.EXPERIENCE_BOTTLE)
+        });
 
-        XP_PRINTER = new Recipe(
-            RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {
-                new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.EXPERIENCE_BOTTLE),
-                new ItemStack(Material.EXPERIENCE_BOTTLE),
-                new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.PAPER),
-                new ItemStack(Material.EXPERIENCE_BOTTLE),
-                new ItemStack(Material.EXPERIENCE_BOTTLE), new ItemStack(Material.EXPERIENCE_BOTTLE),
-                new ItemStack(Material.EXPERIENCE_BOTTLE)
-            });
+    public static final Recipe RADIOACTIVE_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET),
+            new ItemStack(Material.MILK_BUCKET),
+            new ItemStack(Material.SUGAR), new ItemStack(Material.EGG), new ItemStack(Material.SUGAR),
+            new ItemStack(Material.WHEAT), SlimefunItems.URANIUM, new ItemStack(Material.WHEAT)
+        });
 
-        RADIOACTIVE_CAKE = new Recipe(
-            RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {
-                new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET),
-                new ItemStack(Material.SUGAR), new ItemStack(Material.EGG), new ItemStack(Material.SUGAR),
-                new ItemStack(Material.WHEAT), SlimefunItems.URANIUM, new ItemStack(Material.WHEAT)
-            });
-    };
+    public static final Recipe MUSICAL_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET),
+            new ItemStack(Material.MILK_BUCKET),
+            new ItemStack(Material.SUGAR), new ItemStack(Material.EGG), new ItemStack(Material.SUGAR),
+            new ItemStack(Material.WHEAT), new ItemStack(Material.NOTE_BLOCK), new ItemStack(Material.WHEAT)
+        });
 }
