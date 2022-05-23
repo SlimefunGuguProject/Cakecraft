@@ -3,7 +3,6 @@ package me.schntgaispock.myfirstaddon.slimefun;
 import org.bukkit.Material;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.schntgaispock.myfirstaddon.slimefun.items.RadioactiveCake;
 
