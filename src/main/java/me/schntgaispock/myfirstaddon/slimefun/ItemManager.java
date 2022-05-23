@@ -22,14 +22,14 @@ public class ItemManager {
             SchnsRecipes.FIRE_CAKE.recipe);
         waterCake = new WaterCake(
             SchnsGroup.SCHNS_FIRST_ADDON,
-            SchnsStacks.FIRE_CAKE,
-            SchnsRecipes.FIRE_CAKE.recipeType,
-            SchnsRecipes.FIRE_CAKE.recipe);
+            SchnsStacks.WATER_CAKE,
+            SchnsRecipes.WATER_CAKE.recipeType,
+            SchnsRecipes.WATER_CAKE.recipe);
         xpPrinter = new XpPrinter(
             SchnsGroup.SCHNS_FIRST_ADDON,
-            SchnsStacks.FIRE_CAKE,
-            SchnsRecipes.FIRE_CAKE.recipeType,
-            SchnsRecipes.FIRE_CAKE.recipe);
+            SchnsStacks.XP_PRINTER,
+            SchnsRecipes.XP_PRINTER.recipeType,
+            SchnsRecipes.XP_PRINTER.recipe);
         radioactiveCake = new RadioactiveCake(
             SchnsGroup.SCHNS_FIRST_ADDON,
             SchnsStacks.RADIOACTIVE_CAKE,

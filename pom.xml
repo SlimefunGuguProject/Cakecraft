@@ -42,7 +42,7 @@
                         <!-- This is the relocation, make sure to replace the package name, REQUIRED -->
                         <relocation>
                             <pattern>io.github.mooy1.infinitylib</pattern>
-                            <shadedPattern>me.schntgaispock.myfirstaddon.infinitylib</shadedPattern>
+                            <shadedPattern>me.schntgaispock.infinitylib</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>
