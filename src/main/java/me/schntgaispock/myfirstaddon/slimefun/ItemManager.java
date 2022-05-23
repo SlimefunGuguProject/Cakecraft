@@ -4,16 +4,13 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import lombok.Getter;
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
 import me.schntgaispock.myfirstaddon.slimefun.items.FireCake;
+import me.schntgaispock.myfirstaddon.slimefun.items.RadioactiveCake;
 import me.schntgaispock.myfirstaddon.slimefun.items.WaterCake;
 import me.schntgaispock.myfirstaddon.slimefun.items.XpPrinter;
 
 public class ItemManager {
     @Getter
-    public static SlimefunItem fireCake;
-    @Getter
-    public static SlimefunItem waterCake;
-    @Getter
-    public static SlimefunItem xpPrinter;
+    public static SlimefunItem fireCake, waterCake, xpPrinter, radioactiveCake;
 
     public static void setup() {
         MyFirstAddon addon = MyFirstAddon.getInstance();
@@ -33,9 +30,15 @@ public class ItemManager {
             SchnsStacks.FIRE_CAKE,
             SchnsRecipes.FIRE_CAKE.recipeType,
             SchnsRecipes.FIRE_CAKE.recipe);
+        radioactiveCake = new RadioactiveCake(
+            SchnsGroup.SCHNS_FIRST_ADDON,
+            SchnsStacks.RADIOACTIVE_CAKE,
+            SchnsRecipes.RADIOACTIVE_CAKE.recipeType,
+            SchnsRecipes.RADIOACTIVE_CAKE.recipe);
 
         fireCake.register(addon);
         waterCake.register(addon);
         xpPrinter.register(addon);
+        radioactiveCake.register(addon);
     }
 }

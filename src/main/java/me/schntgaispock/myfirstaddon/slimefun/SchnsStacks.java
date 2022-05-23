@@ -3,11 +3,15 @@ package me.schntgaispock.myfirstaddon.slimefun;
 import org.bukkit.Material;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
+import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import me.schntgaispock.myfirstaddon.slimefun.items.RadioactiveCake;
 
 public class SchnsStacks {
     public static final SlimefunItemStack FIRE_CAKE,
         WATER_CAKE,
-        XP_PRINTER;
+        XP_PRINTER,
+        RADIOACTIVE_CAKE;
 
     static {
 
@@ -31,6 +35,16 @@ public class SchnsStacks {
             "&eXP Printer",
             "",
             "&fInflates the XP economy!");
+
+        RADIOACTIVE_CAKE = new SlimefunItemStack(
+            "RADIOACTIVE_CAKE",
+            Material.CAKE,
+            "&4Radioactive Cake",
+            "",
+            "&fWhat a waste of cake ingredients...",
+            "",
+            LoreBuilder.radioactive(RadioactiveCake.RADIOACTIVITY),
+            LoreBuilder.HAZMAT_SUIT_REQUIRED);
 
     }
 }
