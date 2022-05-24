@@ -68,4 +68,12 @@ public class SchnsRecipes {
             new ItemStack(Material.SUGAR), new ItemStack(Material.EGG), new ItemStack(Material.SUGAR),
             new ItemStack(Material.WHEAT), new ItemStack(Material.NOTE_BLOCK), new ItemStack(Material.WHEAT)
         });
+
+    public static final Recipe MUSICAL_CAKE_TUNER = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.JUKEBOX), new ItemStack(Material.OAK_PLANKS),
+            new ItemStack(Material.OAK_PLANKS), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.OAK_PLANKS),
+            new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.PISTON), new ItemStack(Material.OAK_PLANKS)
+        });
 }

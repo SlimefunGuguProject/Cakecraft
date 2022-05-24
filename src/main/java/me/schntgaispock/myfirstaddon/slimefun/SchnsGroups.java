@@ -8,7 +8,7 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
 
-public class SchnsGroup {
+public class SchnsGroups {
     public static final ItemGroup SCHNS_FIRST_ADDON;
 
     static {

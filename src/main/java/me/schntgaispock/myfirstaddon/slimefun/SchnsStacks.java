@@ -10,7 +10,9 @@ public class SchnsStacks {
     public static final SlimefunItemStack FIRE_CAKE,
         WATER_CAKE,
         XP_PRINTER,
-        RADIOACTIVE_CAKE, MUSICAL_CAKE;
+        RADIOACTIVE_CAKE, MUSICAL_CAKE, MUSICAL_CAKE_TUNER;
+
+    public static final SlimefunItemStack GUI_BACKGROUND, GUI_INPUT, GUI_OUTPUT;
 
     static {
 
@@ -51,7 +53,30 @@ public class SchnsStacks {
             "MUSICAL_CAKE",
             Material.CAKE,
             "&aMusical Cake",
+            "&7Tune this in the Musical Cake Tuner",
             "",
             "&fHow does it make that sound?");
+
+        MUSICAL_CAKE_TUNER = new SlimefunItemStack(
+            "MUSICAL_CAKE_TUNER",
+            Material.JUKEBOX,
+            "&aMusical Cake Tuner",
+            "",
+            "&fTunes Musical Cakes by... compressing them?");
+
+        GUI_BACKGROUND = new SlimefunItemStack(
+            "SCHNS_GUI_BACKGROUND",
+            Material.BLACK_STAINED_GLASS_PANE,
+            "");
+
+        GUI_INPUT = new SlimefunItemStack(
+            "SCHNS_GUI_INPUT",
+            Material.LIGHT_BLUE_STAINED_GLASS_PANE,
+            "");
+
+        GUI_OUTPUT = new SlimefunItemStack(
+            "SCHNS_GUI_OUTPUT",
+            Material.ORANGE_STAINED_GLASS_PANE,
+            "");
     }
 }

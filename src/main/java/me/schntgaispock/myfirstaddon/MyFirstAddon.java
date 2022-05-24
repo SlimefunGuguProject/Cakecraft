@@ -2,6 +2,7 @@ package me.schntgaispock.myfirstaddon;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
 import me.schntgaispock.myfirstaddon.slimefun.ItemManager;
+import me.schntgaispock.myfirstaddon.slimefun.listeners.MusicalCakeTunerListener;
 
 public class MyFirstAddon extends AbstractAddon {
 
@@ -24,6 +25,7 @@ public class MyFirstAddon extends AbstractAddon {
         getLogger().info("#======================================#");
 
         ItemManager.setup();
+        MusicalCakeTunerListener.setup();
     }
 
     @Override
