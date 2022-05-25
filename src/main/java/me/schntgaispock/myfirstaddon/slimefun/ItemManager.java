@@ -5,6 +5,7 @@ import lombok.Getter;
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
 import me.schntgaispock.myfirstaddon.slimefun.items.FireCake;
 import me.schntgaispock.myfirstaddon.slimefun.items.MusicalCake;
+import me.schntgaispock.myfirstaddon.slimefun.items.MusicalCakeTuner;
 import me.schntgaispock.myfirstaddon.slimefun.items.RadioactiveCake;
 import me.schntgaispock.myfirstaddon.slimefun.items.WaterCake;
 import me.schntgaispock.myfirstaddon.slimefun.items.XpPrinter;
@@ -46,16 +47,17 @@ public class ItemManager {
             SchnsRecipes.MUSICAL_CAKE.getRecipeType(),
             SchnsRecipes.MUSICAL_CAKE.getRecipe());
 
-        musicalCakeTuner = new MusicalCake(
+        musicalCakeTuner = new MusicalCakeTuner(
             SchnsGroups.SCHNS_FIRST_ADDON,
-            SchnsStacks.MUSICAL_CAKE,
-            SchnsRecipes.MUSICAL_CAKE.getRecipeType(),
-            SchnsRecipes.MUSICAL_CAKE.getRecipe());
+            SchnsStacks.MUSICAL_CAKE_TUNER,
+            SchnsRecipes.MUSICAL_CAKE_TUNER.getRecipeType(),
+            SchnsRecipes.MUSICAL_CAKE_TUNER.getRecipe());
 
+        xpPrinter.register(addon);
         fireCake.register(addon);
         waterCake.register(addon);
-        xpPrinter.register(addon);
         radioactiveCake.register(addon);
         musicalCake.register(addon);
+        musicalCakeTuner.register(addon);
     }
 }

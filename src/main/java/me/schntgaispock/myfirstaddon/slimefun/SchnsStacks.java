@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.schntgaispock.myfirstaddon.slimefun.items.RadioactiveCake;
+import me.schntgaispock.myfirstaddon.slimefun.util.MusicTools;
 
 public class SchnsStacks {
     public static final SlimefunItemStack FIRE_CAKE,
@@ -12,7 +13,20 @@ public class SchnsStacks {
         XP_PRINTER,
         RADIOACTIVE_CAKE, MUSICAL_CAKE, MUSICAL_CAKE_TUNER;
 
-    public static final SlimefunItemStack GUI_BACKGROUND, GUI_INPUT, GUI_OUTPUT;
+    public static final SlimefunItemStack[] MUSICAL_CAKES = new SlimefunItemStack[24];
+
+
+    private  
+    for (int i = 0; i<24; i++) {
+        String _note = MusicTools.NOTES_NAMES[i];
+        MUSICAL_CAKES[i] = new SlimefunItemStack(
+            "MUSICAL_CAKE",
+            Material.CAKE,
+            "&aMusical Cake",
+            "&7" + _note,
+            "",
+            "&fHow does it make that sound?");
+    };
 
     static {
 
@@ -60,23 +74,8 @@ public class SchnsStacks {
         MUSICAL_CAKE_TUNER = new SlimefunItemStack(
             "MUSICAL_CAKE_TUNER",
             Material.JUKEBOX,
-            "&aMusical Cake Tuner",
+            "&1Musical Cake Tuner",
             "",
             "&fTunes Musical Cakes by... compressing them?");
-
-        GUI_BACKGROUND = new SlimefunItemStack(
-            "SCHNS_GUI_BACKGROUND",
-            Material.BLACK_STAINED_GLASS_PANE,
-            "");
-
-        GUI_INPUT = new SlimefunItemStack(
-            "SCHNS_GUI_INPUT",
-            Material.LIGHT_BLUE_STAINED_GLASS_PANE,
-            "");
-
-        GUI_OUTPUT = new SlimefunItemStack(
-            "SCHNS_GUI_OUTPUT",
-            Material.ORANGE_STAINED_GLASS_PANE,
-            "");
     }
 }

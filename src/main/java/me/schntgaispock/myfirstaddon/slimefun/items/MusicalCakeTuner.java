@@ -1,18 +1,12 @@
 package me.schntgaispock.myfirstaddon.slimefun.items;
 
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.SoundCategory;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.mooy1.infinitylib.machines.MenuBlock;
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import lombok.NonNull;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
@@ -32,6 +26,9 @@ public class MusicalCakeTuner extends MenuBlock {
     protected static final int[] GUI_ARROW_DOWN_SLOTS = { 31 };
     protected static final int[] GUI_SET_PITCH_SLOTS = { 22 };
 
+    public static final int INPUT_SLOT = 19;
+    public static final int OUTPUT_SLOT = 25;
+
     private CustomItemStack setPitchItemStack;
     public static final CustomItemStack pitchUpItemStack = GuiElements.getGuiArrow("&7Click to increase pitch");
     public static final CustomItemStack pitchDownItemStack = GuiElements.getGuiArrow("&7Click to decrease pitch");
@@ -44,17 +41,6 @@ public class MusicalCakeTuner extends MenuBlock {
         super(itemGroup, itemStack, recipeType, recipe);
 
         this.setPitchItemStack = GuiElements.getGuiClickable("&bClick to set pitch to: &fF#1");
-    }
-
-    @Override
-    public void preRegister() {
-        addItemHandler((BlockUseHandler) this::onBlockRightClick);
-    }
-
-    private void onBlockRightClick(@NonNull PlayerRightClickEvent event) {
-        event.cancel();
-        Player player = event.getPlayer();
-        player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 
     @Override

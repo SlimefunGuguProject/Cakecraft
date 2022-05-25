@@ -10,9 +10,12 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
 import me.schntgaispock.myfirstaddon.slimefun.items.MusicalCakeTuner;
 import me.schntgaispock.myfirstaddon.slimefun.util.GuiElements;
+import me.schntgaispock.myfirstaddon.slimefun.util.MusicTools;
 import net.md_5.bungee.api.ChatColor;
 
 public class MusicalCakeTunerListener implements Listener {
@@ -22,21 +25,17 @@ public class MusicalCakeTunerListener implements Listener {
 
         Logger logger = MyFirstAddon.getInstance().getLogger();
         logger.log(Level.INFO, e.getView().getTitle());
-        if (e.getView().getTitle().equals(ChatColor.translateAlternateColorCodes('&', "&bMusical Cake Tuner"))) {
+        if (ChatUtils.removeColorCodes(e.getView().getTitle()).equals("Musical Cake Tuner")) {
             ItemStack itemStack = e.getCurrentItem();
-            logger.log(Level.INFO, itemStack.toString());
-            logger.log(Level.INFO, itemStack.toString());
             if (itemStack == null) {
                 return;
-            } else if (itemStack == GuiElements.GUI_BACKGROUND ||
-                itemStack == GuiElements.GUI_INPUT ||
-                itemStack == GuiElements.GUI_OUTPUT ||
-                itemStack == MusicalCakeTuner.pitchUpItemStack ||
-                itemStack == MusicalCakeTuner.pitchDownItemStack
-                ) {
-                e.setCancelled(true);
+            } 
+            String name = ChatUtils.removeColorCodes(itemStack.getItemMeta().getDisplayName());
+            if (name.equals("Click to change pitch")) {
+                logger.log(Level.INFO, "Clicked on the green pane!");
+                String note = MusicTools.NOTES_NAMES[(Muical)]
             } else {
-                e.getWhoClicked().sendMessage("You clicked right!");
+                logger.log(Level.INFO, name);
             }
         }
     }

@@ -14,7 +14,7 @@ public class MusicTools {
     static class Note {
 
         @Getter
-        public double pitch;
+        public float pitch;
         @Getter
         public Sound sound;
         @Getter
@@ -24,7 +24,7 @@ public class MusicTools {
             this(key, defaultSound);
         }
 
-        public Note(double pitch) {
+        public Note(float pitch) {
             this(pitch, defaultSound);
         }
 
@@ -32,18 +32,18 @@ public class MusicTools {
             this(keyToPitch(key), sound);
         }
 
-        public Note(double pitch, Sound sound) {
+        public Note(float pitch, Sound sound) {
             this.pitch = pitch;
             this.sound = sound; 
         }
     }
 
-    private static double log2(double a) {
-        return (Math.log(a))/(Math.log(2));
+    private static float log2(double a) {
+        return (float) ((float) (Math.log(a))/(Math.log(2)));
     }
 
-    public static double keyToPitch(int key) {
-        return Math.pow(2, key-12);
+    public static float keyToPitch(int key) {
+        return (float) Math.pow(2, key-12);
     }
 
     public static int pitchToKey(double pitch) {
