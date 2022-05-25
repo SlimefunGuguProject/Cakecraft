@@ -5,18 +5,19 @@ import org.bukkit.Material;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 public class GuiElements {
-    public static final CustomItemStack GUI_BACKGROUND = new CustomItemStack(
-        Material.BLACK_STAINED_GLASS_PANE,
-        "");
-    public static final CustomItemStack GUI_INPUT = new CustomItemStack(
-        Material.BLUE_STAINED_GLASS_PANE,
-        "");
-    public static final CustomItemStack GUI_OUTPUT = new CustomItemStack(
-        Material.ORANGE_STAINED_GLASS_PANE,
-        "");
-    public static final CustomItemStack GUI_INVISIBLE = new CustomItemStack(
-        Material.LIGHT_GRAY_STAINED_GLASS_PANE,
-        "");
+
+    /**
+     * MenuItems
+     */
+    public static class MenuItems {
+        public static final CustomItemStack getMusicalCakeConfirm(int key) {
+            return new CustomItemStack(
+                Material.LIME_STAINED_GLASS_PANE,
+                "&7Click to set note to: " + MusicTools.NOTES_NAMES[key],
+                "&8" + key
+            );
+        }    
+    }
 
     public static final CustomItemStack getGuiClickable(String name, String... lore) {
         return new CustomItemStack(

@@ -76,4 +76,20 @@ public class SchnsRecipes {
             new ItemStack(Material.OAK_PLANKS), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.OAK_PLANKS),
             new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.PISTON), new ItemStack(Material.OAK_PLANKS)
         });
+
+    public static final Recipe AIR_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET), new ItemStack(Material.MILK_BUCKET),
+            new ItemStack(Material.SUGAR), new ItemStack(Material.EGG), new ItemStack(Material.SUGAR),
+            new ItemStack(Material.DIRT), SlimefunItems.AIR_RUNE, new ItemStack(Material.DIRT)
+        });
+
+    public static final Recipe EARTH_CAKE = new Recipe(
+        RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {
+            new ItemStack(Material.SNOWBALL), new ItemStack(Material.POPPY), new ItemStack(Material.SNOWBALL),
+            new ItemStack(Material.DIRT), new ItemStack(Material.DIRT), new ItemStack(Material.DIRT),
+            new ItemStack(Material.DIRT), new ItemStack(Material.DIRT), new ItemStack(Material.DIRT)
+        });
 }

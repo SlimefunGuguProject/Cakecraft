@@ -10,13 +10,11 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
+import me.schntgaispock.myfirstaddon.slimefun.SchnsStacks;
 import me.schntgaispock.myfirstaddon.slimefun.items.MusicalCakeTuner;
 import me.schntgaispock.myfirstaddon.slimefun.util.GuiElements;
-import me.schntgaispock.myfirstaddon.slimefun.util.MusicTools;
-import net.md_5.bungee.api.ChatColor;
 
 public class MusicalCakeTunerListener implements Listener {
 
@@ -29,11 +27,32 @@ public class MusicalCakeTunerListener implements Listener {
             ItemStack itemStack = e.getCurrentItem();
             if (itemStack == null) {
                 return;
-            } 
+            }
             String name = ChatUtils.removeColorCodes(itemStack.getItemMeta().getDisplayName());
             if (name.equals("Click to change pitch")) {
                 logger.log(Level.INFO, "Clicked on the green pane!");
-                String note = MusicTools.NOTES_NAMES[(Muical)]
+
+                ItemStack inputItem = e.getInventory().getItem(MusicalCakeTuner.INPUT_SLOT);
+                if (inputItem != null) {
+                    int inputAmount = inputItem.getAmount();
+                    inputItem.setAmount(inputAmount--);
+
+                    int key = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
+                    e.getInventory().setItem(MusicalCakeTuner.OUTPUT_SLOT, SchnsStacks.MUSICAL_CAKES[key]);
+                }
+
+            } else if (name.equals("Click to increase pitch")) {
+                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
+                int key = (oldKey < 23) ? oldKey++ : oldKey;
+                e.getInventory().setItem(MusicalCakeTuner.CONFIRM_SLOT,
+                    GuiElements.MenuItems.getMusicalCakeConfirm(key));
+
+            } else if (name.equals("Click to decrease pitch")) {
+                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
+                int key = (oldKey > 0) ? oldKey-- : oldKey;
+                e.getInventory().setItem(MusicalCakeTuner.CONFIRM_SLOT,
+                    GuiElements.MenuItems.getMusicalCakeConfirm(key));
+
             } else {
                 logger.log(Level.INFO, name);
             }
@@ -41,6 +60,7 @@ public class MusicalCakeTunerListener implements Listener {
     }
 
     public static void setup() {
-        Bukkit.getPluginManager().registerEvents((Listener) (new MusicalCakeTunerListener()), (Plugin) MyFirstAddon.getInstance());
+        Bukkit.getPluginManager().registerEvents((Listener) (new MusicalCakeTunerListener()),
+            (Plugin) MyFirstAddon.getInstance());
     }
 }
