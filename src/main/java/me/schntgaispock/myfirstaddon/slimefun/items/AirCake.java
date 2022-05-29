@@ -3,18 +3,10 @@ package me.schntgaispock.myfirstaddon.slimefun.items;
 import java.util.Collection;
 
 
-import org.bukkit.ChatColor;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
-import org.bukkit.SoundCategory;
 import org.bukkit.block.Block;
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.BoundingBox;
-import org.bukkit.util.Vector;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;

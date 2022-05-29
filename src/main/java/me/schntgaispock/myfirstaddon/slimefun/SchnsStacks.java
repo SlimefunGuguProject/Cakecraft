@@ -17,7 +17,7 @@ public class SchnsStacks {
 
     private static SlimefunItemStack[] _generateMusicalCakeStacks() {
         SlimefunItemStack[] cakes = new SlimefunItemStack[23];
-        for (int i = 0; i < 24; i++) {
+        for (int i = 0; i < 23; i++) {
             String _note = MusicTools.NOTES_NAMES[i];
             cakes[i] = new SlimefunItemStack(
                 "MUSICAL_CAKE",
