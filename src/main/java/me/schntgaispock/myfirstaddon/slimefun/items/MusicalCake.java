@@ -28,7 +28,7 @@ public class MusicalCake extends SlimefunItem {
 
         this.KEY = key;
     }
-    
+
     @Override
     public void preRegister() {
         addItemHandler((BlockUseHandler) this::onBlockRightClick);
@@ -38,10 +38,12 @@ public class MusicalCake extends SlimefunItem {
         event.cancel();
         Player player = event.getPlayer();
         String loreLine = ChatUtils.removeColorCodes(this.getItem().getItemMeta().getLore().get(0));
-        MyFirstAddon.getInstance().getLogger().log(Level.INFO, loreLine);
         if (this.KEY < 0) {
             player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, SoundCategory.PLAYERS, 1.0f, 1.0f);
         } else {
+            MyFirstAddon.getInstance().getLogger().log(Level.INFO, "lore:" + loreLine);
+            MyFirstAddon.getInstance().getLogger().log(Level.INFO, "KEY:" + this.KEY);
+            MyFirstAddon.getInstance().getLogger().log(Level.INFO, "pitch:" + MusicTools.keyToPitch(this.KEY));
             player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_DIDGERIDOO, SoundCategory.PLAYERS, 1.0f,
                 MusicTools.keyToPitch(this.KEY));
         }

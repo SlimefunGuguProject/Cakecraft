@@ -49,10 +49,10 @@ public class MusicTools {
     }
 
     public static float keyToPitch(int key) {
-        return (float) Math.pow(2, key-12);
+        return (float) Math.pow(2, (key-12)/12);
     }
 
     public static int pitchToKey(double pitch) {
-        return (int) Math.round(log2(pitch)) + 12;
+        return (int) Math.round(12 * log2(pitch)) + 12;
     }
 }

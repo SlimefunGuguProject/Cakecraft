@@ -1,5 +1,7 @@
 package me.schntgaispock.myfirstaddon.slimefun;
 
+
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import lombok.Getter;
 import me.schntgaispock.myfirstaddon.MyFirstAddon;
@@ -15,9 +17,10 @@ public class ItemManager {
     @Getter
     public static SlimefunItem fireCake, waterCake, xpPrinter, radioactiveCake, musicalCake, musicalCakeTuner, airCake;
 
+    @Getter
     public static MusicalCake[] musicalCakes;
 
-    public static MusicalCake[] _getMusicalCakes() {
+    public static MusicalCake[] setupMusicalCakes(SlimefunAddon addon) {
         MusicalCake[] cakes = new MusicalCake[24];
         for (int i = 0; i < 24; i++) {
             cakes[i] = new MusicalCake(
@@ -25,6 +28,8 @@ public class ItemManager {
                 SchnsStacks.MUSICAL_CAKES[i],
                 SchnsRecipes.MUSICAL_CAKE.getRecipeType(),
                 SchnsRecipes.MUSICAL_CAKE.getRecipe(), i);
+            cakes[i].setHidden(true);
+            cakes[i].register(addon);
         }
         return cakes;
     }
@@ -62,7 +67,7 @@ public class ItemManager {
             SchnsRecipes.MUSICAL_CAKE.getRecipeType(),
             SchnsRecipes.MUSICAL_CAKE.getRecipe(), -1);
 
-        musicalCakes = _getMusicalCakes();
+        musicalCakes = setupMusicalCakes(addon);
 
         musicalCakeTuner = new MusicalCakeTuner(
             SchnsGroups.SCHNS_FIRST_ADDON,
