@@ -1,8 +1,6 @@
 package me.schntgaispock.myfirstaddon.slimefun.listeners;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.annotation.Nonnull;
 
@@ -23,7 +21,6 @@ public class MusicalCakeTunerListener implements Listener {
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {
-        Logger logger = MyFirstAddon.getInstance().getLogger();
 
         if (ChatUtils.removeColorCodes(e.getView().getTitle()).equals("Musical Cake Tuner")) {
             ItemStack itemStack = e.getCurrentItem();
@@ -35,7 +32,6 @@ public class MusicalCakeTunerListener implements Listener {
             @Nonnull List<String> buttonLore = e.getInventory().getItem(22).getItemMeta().getLore();
 
             if (name.startsWith("Click to set note to:")) {
-                logger.log(Level.INFO, "Clicked on the green pane!");
 
                 ItemStack inputItem = e.getInventory().getItem(MusicalCakeTuner.INPUT_SLOT);
                 if (inputItem != null) {
@@ -60,8 +56,6 @@ public class MusicalCakeTunerListener implements Listener {
                     GuiElements.MenuItems.getMusicalCakeConfirm(key));
                 buttonLore.set(0, "" + key);
 
-            } else {
-                logger.log(Level.INFO, "(else): ", name);
             }
         }
     }

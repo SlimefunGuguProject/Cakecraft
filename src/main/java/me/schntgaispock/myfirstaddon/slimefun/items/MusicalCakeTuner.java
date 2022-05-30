@@ -61,7 +61,7 @@ public class MusicalCakeTuner extends MenuBlock {
 
     @NonNull
     public void setCurrentPitch(int pitch) {
-        this.currentPitch = Math.min(0, Math.max(pitch, 23));
+        this.currentPitch = Math.min(0, Math.max(pitch, 24));
     }
 
     @Override

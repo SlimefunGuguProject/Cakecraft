@@ -21,8 +21,8 @@ public class ItemManager {
     public static MusicalCake[] musicalCakes;
 
     public static MusicalCake[] setupMusicalCakes(SlimefunAddon addon) {
-        MusicalCake[] cakes = new MusicalCake[24];
-        for (int i = 0; i < 24; i++) {
+        MusicalCake[] cakes = new MusicalCake[25];
+        for (int i = 0; i < 25; i++) {
             cakes[i] = new MusicalCake(
                 SchnsGroups.SCHNS_FIRST_ADDON,
                 SchnsStacks.MUSICAL_CAKES[i],
