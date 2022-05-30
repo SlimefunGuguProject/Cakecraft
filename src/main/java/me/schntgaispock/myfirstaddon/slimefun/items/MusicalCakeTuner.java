@@ -45,7 +45,7 @@ public class MusicalCakeTuner extends MenuBlock {
         @NonNull ItemStack[] recipe) {
         super(itemGroup, itemStack, recipeType, recipe);
 
-        this.setPitchItemStack = GuiElements.getGuiClickable("&bClick to set pitch to: &fF#1", "&80");
+        this.setPitchItemStack = GuiElements.getGuiClickable("&bClick to set note to: &fF#1", "&80");
         this.setCurrentPitch(0);
     }
 

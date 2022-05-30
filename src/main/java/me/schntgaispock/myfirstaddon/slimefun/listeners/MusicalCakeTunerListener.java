@@ -1,7 +1,10 @@
 package me.schntgaispock.myfirstaddon.slimefun.listeners;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.annotation.Nonnull;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -20,41 +23,45 @@ public class MusicalCakeTunerListener implements Listener {
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {
-
         Logger logger = MyFirstAddon.getInstance().getLogger();
-        logger.log(Level.INFO, e.getView().getTitle());
+
         if (ChatUtils.removeColorCodes(e.getView().getTitle()).equals("Musical Cake Tuner")) {
             ItemStack itemStack = e.getCurrentItem();
             if (itemStack == null) {
                 return;
             }
+
             String name = ChatUtils.removeColorCodes(itemStack.getItemMeta().getDisplayName());
-            if (name.equals("Click to change pitch")) {
+            @Nonnull List<String> buttonLore = e.getInventory().getItem(22).getItemMeta().getLore();
+
+            if (name.startsWith("Click to set note to:")) {
                 logger.log(Level.INFO, "Clicked on the green pane!");
 
                 ItemStack inputItem = e.getInventory().getItem(MusicalCakeTuner.INPUT_SLOT);
                 if (inputItem != null) {
                     int inputAmount = inputItem.getAmount();
-                    inputItem.setAmount(inputAmount--);
+                    inputItem.setAmount(inputAmount - 1);
 
-                    int key = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
+                    int key = Integer.parseInt(ChatUtils.removeColorCodes(buttonLore.get(0)));
                     e.getInventory().setItem(MusicalCakeTuner.OUTPUT_SLOT, SchnsStacks.MUSICAL_CAKES[key]);
                 }
 
             } else if (name.equals("Click to increase pitch")) {
-                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
-                int key = (oldKey < 23) ? oldKey++ : oldKey;
+                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(buttonLore.get(0)));
+                int key = (oldKey < 24) ? oldKey + 1 : oldKey;
                 e.getInventory().setItem(MusicalCakeTuner.CONFIRM_SLOT,
                     GuiElements.MenuItems.getMusicalCakeConfirm(key));
+                buttonLore.set(0, "" + key);    
 
             } else if (name.equals("Click to decrease pitch")) {
-                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(itemStack.getItemMeta().getLore().get(0)));
-                int key = (oldKey > 0) ? oldKey-- : oldKey;
+                int oldKey = Integer.parseInt(ChatUtils.removeColorCodes(buttonLore.get(0)));
+                int key = (oldKey > 0) ? oldKey - 1 : oldKey;
                 e.getInventory().setItem(MusicalCakeTuner.CONFIRM_SLOT,
                     GuiElements.MenuItems.getMusicalCakeConfirm(key));
+                buttonLore.set(0, "" + key);
 
             } else {
-                logger.log(Level.INFO, name);
+                logger.log(Level.INFO, "(else): ", name);
             }
         }
     }

@@ -13,7 +13,7 @@ public class GuiElements {
         public static final CustomItemStack getMusicalCakeConfirm(int key) {
             return new CustomItemStack(
                 Material.LIME_STAINED_GLASS_PANE,
-                "&7Click to set note to: " + MusicTools.NOTES_NAMES[key],
+                "&bClick to set note to: &f" + MusicTools.NOTES_NAMES[key],
                 "&8" + key
             );
         }    

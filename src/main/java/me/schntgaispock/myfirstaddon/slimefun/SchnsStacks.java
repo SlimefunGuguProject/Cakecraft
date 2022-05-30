@@ -16,18 +16,17 @@ public class SchnsStacks {
     public static final SlimefunItemStack[] MUSICAL_CAKES = _generateMusicalCakeStacks();
 
     private static SlimefunItemStack[] _generateMusicalCakeStacks() {
-        SlimefunItemStack[] cakes = new SlimefunItemStack[23];
-        for (int i = 0; i < 23; i++) {
+        SlimefunItemStack[] cakes = new SlimefunItemStack[24];
+        for (int i = 0; i < 24; i++) {
             String _note = MusicTools.NOTES_NAMES[i];
             cakes[i] = new SlimefunItemStack(
-                "MUSICAL_CAKE",
+                "MUSICAL_CAKE_" + _note,
                 Material.CAKE,
                 "&dMusical Cake",
                 "&7" + _note,
                 "",
                 "&fHow does it make that sound?");
-        }
-        ;
+        };
         return cakes;
     }
 
@@ -45,7 +44,7 @@ public class SchnsStacks {
             Material.CAKE,
             "&bWater Cake",
             "",
-            "&dExtinguishes you when you try to eat it!");
+            "&fExtinguishes you when you try to eat it!");
 
         XP_PRINTER = new SlimefunItemStack(
             "XP_PRINTER",
