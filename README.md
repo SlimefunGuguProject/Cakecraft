@@ -1,3 +1,3 @@
 # MyFirstAddon by SchnTgaiSpock
 
-    ^ title
+^ title
