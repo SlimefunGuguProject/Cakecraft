@@ -6,7 +6,6 @@ import io.github.mooy1.infinitylib.machines.MenuBlock;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import lombok.Getter;
 import lombok.NonNull;
@@ -38,7 +37,6 @@ public class MusicalCakeTuner extends MenuBlock {
     public static final CustomItemStack pitchUpItemStack = GuiElements.getGuiArrow("&7Click to increase pitch");
     public static final CustomItemStack pitchDownItemStack = GuiElements.getGuiArrow("&7Click to decrease pitch");
 
-    public static final Radioactivity RADIOACTIVITY = Radioactivity.HIGH;
 
     public MusicalCakeTuner(@NonNull ItemGroup itemGroup, @NonNull SlimefunItemStack itemStack,
         @NonNull RecipeType recipeType,
