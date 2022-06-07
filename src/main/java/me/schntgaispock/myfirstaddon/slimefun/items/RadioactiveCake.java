@@ -37,7 +37,7 @@ public class RadioactiveCake extends SlimefunItem implements Radioactive {
     private void onBlockRightClick(@NonNull PlayerRightClickEvent event) {
         event.cancel();
         Player player = event.getPlayer();
-        player.sendMessage(ChatColor.YELLOW + "You probably shouldn't eat a Radioactive Cake...");
+        player.sendMessage(ChatColor.YELLOW + "你可能不应该食用具有放射性的蛋糕...");
         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 
