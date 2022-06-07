@@ -22,10 +22,10 @@ public class SchnsStacks {
             cakes[i] = new SlimefunItemStack(
                 "MUSICAL_CAKE_" + _note,
                 Material.CAKE,
-                "&dMusical Cake",
+                "&d音乐蛋糕",
                 "&7" + _note,
                 "",
-                "&fHow does it make that sound?");
+                "&f它到底是如何放出音乐的呢?");
         };
         return cakes;
     }
@@ -35,32 +35,32 @@ public class SchnsStacks {
         FIRE_CAKE = new SlimefunItemStack(
             "FIRE_CAKE",
             Material.CAKE,
-            "&cFire Cake",
+            "&c火焰蛋糕",
             "",
-            "&fSets you on fire when you try to eat it!");
+            "&f烫嘴!");
 
         WATER_CAKE = new SlimefunItemStack(
             "WATER_CAKE",
             Material.CAKE,
-            "&bWater Cake",
+            "&b水蛋糕",
             "",
-            "&fExtinguishes you when you try to eat it!");
+            "&f食用它的时候可以熄灭你身上的火!");
 
         XP_PRINTER = new SlimefunItemStack(
             "XP_PRINTER",
             Material.EXPERIENCE_BOTTLE,
-            "&eXP Printer",
+            "&e经验释能器",
             "",
-            "&fInflates the XP economy!",
+            "&f源源不断的经验!",
             "",
             LoreBuilder.RIGHT_CLICK_TO_USE);
 
         RADIOACTIVE_CAKE = new SlimefunItemStack(
             "RADIOACTIVE_CAKE",
             Material.CAKE,
-            "&4Radioactive Cake",
+            "&4核蛋糕",
             "",
-            "&fWhat a waste of cake ingredients...",
+            "&f用核废水制成的蛋糕...",
             "",
             LoreBuilder.radioactive(RadioactiveCake.RADIOACTIVITY),
             LoreBuilder.HAZMAT_SUIT_REQUIRED);
@@ -68,30 +68,30 @@ public class SchnsStacks {
         MUSICAL_CAKE = new SlimefunItemStack(
             "MUSICAL_CAKE",
             Material.CAKE,
-            "&dMusical Cake",
-            "&7Tune this in the Musical Cake Tuner",
+            "&d音乐蛋糕",
+            "&7需在音乐蛋糕调音器中调音",
             "",
-            "&fHow does it make that sound?");
+            "&f它到底是如何放出音乐的呢?");
 
         MUSICAL_CAKE_TUNER = new SlimefunItemStack(
             "MUSICAL_CAKE_TUNER",
             Material.JUKEBOX,
-            "&5Musical Cake Tuner",
+            "&5音乐蛋糕调音器",
             "",
-            "&fTunes Musical Cakes by... compressing them?");
+            "&f压缩...音乐蛋糕?");
 
         AIR_CAKE = new SlimefunItemStack(
             "AIR_CAKE",
             Material.CAKE,
-            "&fAir Cake",
+            "&f空气蛋糕",
             "",
-            "&fToo bad it doesn't float.");
+            "&f可惜它不会浮起来");
 
         EARTH_CAKE = new SlimefunItemStack(
             "EARTH_CAKE",
             Material.CAKE,
-            "&aEarth Cake",
+            "&a地球蛋糕",
             "",
-            "&fIsn't this just dirt?");
+            "&f泥土又或是石头？");
     }
 }
