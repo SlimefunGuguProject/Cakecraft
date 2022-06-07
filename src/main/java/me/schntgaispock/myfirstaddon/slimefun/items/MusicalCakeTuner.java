@@ -34,8 +34,8 @@ public class MusicalCakeTuner extends MenuBlock {
     private int currentPitch;
 
     private CustomItemStack setPitchItemStack;
-    public static final CustomItemStack pitchUpItemStack = GuiElements.getGuiArrow("&7Click to increase pitch");
-    public static final CustomItemStack pitchDownItemStack = GuiElements.getGuiArrow("&7Click to decrease pitch");
+    public static final CustomItemStack pitchUpItemStack = GuiElements.getGuiArrow("&7单击提升音高");
+    public static final CustomItemStack pitchDownItemStack = GuiElements.getGuiArrow("&7单击降低音高");
 
 
     public MusicalCakeTuner(@NonNull ItemGroup itemGroup, @NonNull SlimefunItemStack itemStack,
@@ -43,7 +43,7 @@ public class MusicalCakeTuner extends MenuBlock {
         @NonNull ItemStack[] recipe) {
         super(itemGroup, itemStack, recipeType, recipe);
 
-        this.setPitchItemStack = GuiElements.getGuiClickable("&bClick to set note to: &fF#1", "&80");
+        this.setPitchItemStack = GuiElements.getGuiClickable("&b单击设定为: &fF#1", "&80");
         this.setCurrentPitch(0);
     }
 
