@@ -14,7 +14,7 @@ public class SchnsGroups {
     static {
         SCHNS_FIRST_ADDON = new ItemGroup(
             new NamespacedKey(MyFirstAddon.getInstance(), "schns_first_addon"),
-            new CustomItemStack(Material.DIAMOND, "&6Schn's First Addon", "", "&b> Click to open"));
+            new CustomItemStack(Material.DIAMOND, "&6蛋糕工艺", "", "&b> 单击打开"));
     }
 
 }
